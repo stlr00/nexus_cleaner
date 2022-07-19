@@ -6,7 +6,10 @@ export default function (sortedContainers: Record<string, Container[]>): string[
 
     for (let name in sortedContainers) {
         if (sortedContainers[name].length > CONFIG.COUNT) {
-            resultArr.push(...(sortedContainers[name].slice(CONFIG.COUNT).map(el => el.id)))
+            const arrayForDelete = sortedContainers[name].slice(CONFIG.COUNT)
+            const arrayId = arrayForDelete.map(container => container.id)
+
+            resultArr.push(...arrayId)
         }
     }
 
