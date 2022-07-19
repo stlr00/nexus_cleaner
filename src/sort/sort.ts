@@ -30,7 +30,7 @@ function sortContainersByVersions(objectWithContainers: Record<string, Container
 }
 
 
-module.exports = function sortContainers(listOfContainers) {
+export function sortContainers(listOfContainers) {
     return sortContainersByName(listOfContainers)
     // const sortedByName = sortContainersByName(listOfContainers)
     // return sortContainersByVersions(sortedByName)

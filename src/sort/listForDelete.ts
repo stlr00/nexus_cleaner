@@ -1,7 +1,7 @@
 import {Container} from "../models/container";
 import {CONFIG} from "../config";
 
-export default function (sortedContainers: Record<string, Container[]>): string[] {
+export function deleteList(sortedContainers: Record<string, Container[]>): string[] {
     const resultArr: string[] = []
 
     for (let name in sortedContainers) {
