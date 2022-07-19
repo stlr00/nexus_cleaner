@@ -4,7 +4,7 @@ function sortContainersByName(listOfContainers: Container[]): Record<string, Con
     const resultDictionary: Record<string, Container[]> = {}
 
     for (let i = 0; i < listOfContainers.length; i++) {
-        if (/^[a-zA-Z]/.test(listOfContainers[i].version)) {
+        if (!/^[a-zA-Z]/.test(listOfContainers[i].version)) {
             if (resultDictionary.hasOwnProperty(listOfContainers[i].name)) {
                 resultDictionary[listOfContainers[i].name].push(listOfContainers[i])
             } else {
@@ -31,7 +31,6 @@ function sortContainersByVersions(objectWithContainers: Record<string, Container
 
 
 export function sortContainers(listOfContainers) {
-    return sortContainersByName(listOfContainers)
-    // const sortedByName = sortContainersByName(listOfContainers)
-    // return sortContainersByVersions(sortedByName)
+    const sortedByName = sortContainersByName(listOfContainers)
+    return sortContainersByVersions(sortedByName)
 }
