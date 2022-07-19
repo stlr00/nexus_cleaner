@@ -7,7 +7,6 @@ async function test() {
     const listOfContainers = await getComponentList()
     const sorted = sortContainers(listOfContainers)
     const idsForDelete = deleteList(sorted)
-    console.log(idsForDelete)
 }
 
 test()

@@ -7,6 +7,10 @@ export function deleteList(sortedContainers: Record<string, Container[]>): strin
     for (let name in sortedContainers) {
         if (sortedContainers[name].length > CONFIG.COUNT) {
             const arrayForDelete = sortedContainers[name].slice(CONFIG.COUNT)
+
+            console.log(name)
+            console.log(arrayForDelete.map(c => c.version))
+
             const arrayId = arrayForDelete.map(container => container.id)
 
             resultArr.push(...arrayId)
